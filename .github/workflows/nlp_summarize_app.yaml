@@ -16,7 +16,7 @@ jobs:
     
 
     - name: Build the Docker image
-      run: docker build ./summarize_nlp_app -f ./summarize_nlp_app/Dockerfile --tag krishnas6795/nlp-summarize-app:latest
+      run: docker build ./summarize_nlp_app -f ./summarize_nlp_app/Dockerfile --tag krishdockhub/nlp-summarize-app:latest
 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
@@ -25,4 +25,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Push Docker Image
-      run: docker push krishnas6795/nlp-summarize-app:latest
+      run: docker push krishdockhub/nlp-summarize-app:latest
