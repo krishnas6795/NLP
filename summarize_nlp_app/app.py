@@ -53,13 +53,13 @@ def main():
         raw_text = st.text_area("Enter Text Here")
         if st.button("Summarize"):
             
-            with st.beta_expander("original Text"):
+            with st.expander("original Text"):
                 st.write(raw_text)
 
         # Layout
-        c1, c2 = st.beta_columns(2)
+        c1, c2 = st.columns(2)
         with c1:
-            with st.beta_expander("LexRank Summary"):
+            with st.expander("LexRank Summary"):
                 my_summary = sumy_summarizer(raw_text)
                 document_len = {"Original":len(raw_text), 
                 "Summary":len(my_summary)}
@@ -74,7 +74,7 @@ def main():
                 st.altair_chart(c)
 
         with c2:
-            with st.beta_expander("LexRank Summary"):
+            with st.expander("LexRank Summary"):
                 my_summary = summarize(raw_text)
                 document_len = {"Original":len(raw_text), 
                 "Summary":len(my_summary)}
